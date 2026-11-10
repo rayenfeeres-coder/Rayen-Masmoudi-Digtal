@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080b">
+  <meta name="description" content="Rayen Masmoudi Digital — premium digital marketing, video, development and design studio in Sfax, Tunisia.">
+  <title>RAYEN MASMOUDI DIGITAL — Digital, elevated.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08080b;
+      --surface: rgba(20, 20, 27, .78);
+      --line: rgba(255,255,255,.1);
+      --muted: #a4a3ad;
+      --white: #f7f5f2;
+      --gold: #e6bd77;
+      --purple: #a584ff;
+      --blue: #70b9ff;
+      --font: "DM Sans", sans-serif;
+      --display: "Manrope", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 82% 10%, rgba(106, 74, 185, .14), transparent 32rem),
+        radial-gradient(ellipse at 8% 38%, rgba(43, 107, 163, .1), transparent 31rem),
+        var(--bg);
+      font: 400 15px/1.65 var(--font);
+      overflow-x: hidden;
+    }
+    body::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      opacity: .16;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: rgba(8,8,11,.76);
+      backdrop-filter: blur(18px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font: 800 13px/1 var(--display); letter-spacing: .12em; white-space: nowrap; }
+    .brand-mark {
+      display: grid; width: 35px; aspect-ratio: 1; place-items: center; border: 1px solid rgba(230,189,119,.6);
+      border-radius: 11px; color: var(--gold); font: 800 12px var(--display); transform: rotate(-6deg);
+      box-shadow: inset 0 0 20px rgba(230,189,119,.08), 0 0 24px rgba(230,189,119,.08);
+    }
+    .brand-name span { display: block; margin-top: 5px; color: #96939d; font-size: 9px; letter-spacing: .24em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: #b6b4bd; font-size: 13px; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--gold); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
+      padding: 0 21px; border: 1px solid rgba(255,255,255,.17); border-radius: 999px;
+      color: var(--white); background: rgba(255,255,255,.045); font-size: 13px; font-weight: 600;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+      cursor: pointer;
+    }
+    .button:hover { transform: translateY(-2px); border-color: rgba(230,189,119,.65); box-shadow: 0 9px 30px rgba(230,189,119,.12); }
+    .button-primary {
+      color: #15110a; border-color: transparent; background: linear-gradient(110deg, #f1d49e, #d6a957);
+      box-shadow: 0 8px 26px rgba(203,157,83,.19);
+    }
+    .button-primary:hover { background: linear-gradient(110deg, #ffe5b5, #e0b768); }
+    .button-small { min-height: 41px; padding-inline: 17px; font-size: 12px; }
+    .arrow { font-size: 17px; line-height: 0; }
+    .hero { position: relative; display: grid; min-height: 650px; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 34px; padding-block: 74px 92px; overflow-x: clip; }
+    .hero::after {
+      position: absolute; z-index: -1; top: 12%; right: 3%; width: 430px; aspect-ratio: 1; border-radius: 50%;
+      content: ""; background: radial-gradient(circle, rgba(117,84,211,.2), rgba(54,116,174,.08) 40%, transparent 69%);
+      filter: blur(12px); animation: breathe 8s ease-in-out infinite alternate;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow::before { width: 22px; height: 1px; content: ""; background: currentColor; box-shadow: 0 0 11px currentColor; }
+    .hero h1 { max-width: 680px; margin: 22px 0 18px; font: 700 clamp(46px, 6.4vw, 78px)/1.07 var(--display); letter-spacing: -.065em; }
+    .hero h1 .gradient { color: transparent; background: linear-gradient(98deg, #f0d39d 4%, #d2a951 39%, #b18eff 75%, #79beff); background-clip: text; -webkit-background-clip: text; }
+    .hero-copy { max-width: 530px; margin: 0; color: #b3b0bb; font-size: 16px; line-height: 1.85; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-note { display: flex; align-items: center; gap: 11px; margin-top: 37px; color: #92909b; font-size: 12px; }
+    .online-dot { width: 7px; height: 7px; border-radius: 50%; background: #8bd1a8; box-shadow: 0 0 14px #61d794; }
+    .hero-art { position: relative; display: grid; min-height: 440px; place-items: center; perspective: 1000px; }
+    .orbit { position: absolute; width: min(410px, 92%); aspect-ratio: 1; border: 1px solid rgba(218,192,145,.18); border-radius: 50%; transform: rotateX(68deg) rotateZ(-24deg); box-shadow: 0 0 44px rgba(125,94,211,.1); }
+    .orbit::before, .orbit::after { position: absolute; inset: 10%; border: 1px solid rgba(132,162,233,.15); border-radius: 50%; content: ""; }
+    .orbit::after { inset: 21%; border-color: rgba(230,189,119,.13); }
+    .orb { position: absolute; z-index: 1; width: 13px; aspect-ratio: 1; border-radius: 50%; background: var(--gold); box-shadow: 0 0 20px 5px rgba(230,189,119,.5); }
+    .orb-one { top: 12%; right: 19%; }
+    .orb-two { bottom: 17%; left: 16%; width: 9px; background: var(--blue); box-shadow: 0 0 20px 5px rgba(112,185,255,.55); }
+    .hero-tile {
+      position: relative; z-index: 2; display: grid; width: min(305px, 77%); aspect-ratio: .88; place-items: center;
+      border: 1px solid rgba(255,255,255,.19); border-radius: 28px;
+      background: linear-gradient(145deg, rgba(37,34,47,.88), rgba(12,13,20,.89) 55%, rgba(31,28,44,.85));
+      box-shadow: 22px 35px 75px rgba(0,0,0,.55), inset 1px 1px 0 rgba(255,255,255,.14), 0 0 60px rgba(119,87,201,.15);
+      transform: rotateY(-12deg) rotateX(6deg); transition: transform .5s ease;
+    }
+    .hero-art:hover .hero-tile { transform: rotateY(-4deg) rotateX(2deg) translateY(-5px); }
+    .tile-glow { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
+    .tile-glow::before { position: absolute; top: -25%; left: -40%; width: 180%; height: 55%; content: ""; background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent); transform: rotate(-35deg); }
+    .tile-content { position: relative; z-index: 1; text-align: center; }
+    .tile-monogram { display: grid; width: 132px; aspect-ratio: 1; margin: auto auto 22px; place-items: center; border: 1px solid rgba(230,189,119,.47); border-radius: 36px; color: var(--gold); font: 800 44px var(--display); letter-spacing: -.1em; background: radial-gradient(circle at 30% 25%, rgba(238,207,151,.17), rgba(108,79,177,.13) 50%, rgba(16,16,24,.4)); box-shadow: inset 0 0 35px rgba(230,189,119,.1), 0 0 50px rgba(168,132,255,.14); text-shadow: 0 0 24px rgba(230,189,119,.48); }
+    .tile-content strong { display: block; font: 700 12px var(--display); letter-spacing: .2em; }
+    .tile-content small { display: block; margin-top: 8px; color: #9c98a7; font-size: 9px; letter-spacing: .25em; }
+    .floating-tag { position: absolute; z-index: 3; padding: 11px 15px; border: 1px solid var(--line); border-radius: 12px; color: #dedbe4; background: rgba(20,19,27,.83); box-shadow: 0 16px 35px rgba(0,0,0,.32); backdrop-filter: blur(14px); font-size: 11px; animation: float 5s ease-in-out infinite; }
+    .floating-tag b { color: var(--gold); }
+    .tag-top { top: 17%; left: 2%; }
+    .tag-bottom { right: 0; bottom: 16%; animation-delay: -2.5s; }
+    .section { padding-block: 92px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 37px; }
+    .section-head h2 { margin: 12px 0 0; font: 700 clamp(30px, 4vw, 44px)/1.15 var(--display); letter-spacing: -.045em; }
+    .section-head h2 span { color: var(--gold); }
+    .section-head p { max-width: 415px; margin: 0; color: var(--muted); font-size: 14px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 19px; }
+    .service-card {
+      position: relative; min-width: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.105); border-radius: 19px;
+      background: linear-gradient(145deg, rgba(25,25,33,.88), rgba(13,13,18,.92)); box-shadow: 0 17px 40px rgba(0,0,0,.21);
+      transform-style: preserve-3d; transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    }
+    .service-card::after { position: absolute; inset: 0; z-index: 0; pointer-events: none; content: ""; opacity: 0; background: radial-gradient(400px circle at var(--mx,50%) var(--my,0%), rgba(174,142,255,.13), transparent 42%); transition: opacity .3s ease; }
+    .service-card:hover { border-color: rgba(207,180,255,.34); box-shadow: 0 25px 55px rgba(0,0,0,.4), 0 0 32px rgba(113,81,191,.12); }
+    .service-card:hover::after { opacity: 1; }
+    .service-art { position: relative; display: grid; height: 213px; overflow: hidden; place-items: center; border-bottom: 1px solid rgba(255,255,255,.07); background: radial-gradient(ellipse at 50% 85%, var(--tint), transparent 69%), linear-gradient(155deg,#191821,#101015 70%); }
+    .service-art::before { position: absolute; bottom: 13px; width: 56%; height: 20px; border-radius: 50%; content: ""; background: var(--tint); filter: blur(23px); opacity: .72; }
+    .service-art svg { position: relative; z-index: 1; width: 83%; max-width: 275px; height: 184px; overflow: visible; filter: drop-shadow(0 16px 17px rgba(0,0,0,.46)); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+    .service-card:hover .service-art svg { transform: translateY(-4px) scale(1.035); }
+    .service-body { position: relative; z-index: 1; padding: 21px 21px 20px; }
+    .service-kicker { color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .service-body h3 { margin: 8px 0 8px; font: 700 18px/1.35 var(--display); letter-spacing: -.02em; }
+    .service-body p { min-height: 51px; margin: 0; color: #a8a6af; font-size: 12px; line-height: 1.7; }
+    .service-footer { display: flex; align-items: end; justify-content: space-between; gap: 10px; margin-top: 22px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.09); }
+    .price-label { display: block; color: #898792; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+    .price { display: block; margin-top: 3px; color: var(--white); font: 700 19px var(--display); }
+    .price small { color: #a7a4ae; font: 500 10px var(--font); }
+    .order-link { display: inline-flex; align-items: center; gap: 6px; min-height: 37px; padding: 0 12px; border: 1px solid rgba(230,189,119,.35); border-radius: 999px; color: #eed5a9; background: rgba(230,189,119,.06); font-size: 10px; font-weight: 700; transition: .2s ease; }
+    .order-link:hover { color: #17120a; background: var(--gold); }
+    .value-section { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 58px; align-items: center; padding: 48px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(120deg, rgba(30,27,39,.8), rgba(14,15,21,.85)); box-shadow: inset 0 1px rgba(255,255,255,.05); }
+    .value-section h2 { margin: 13px 0 13px; font: 700 clamp(29px, 4vw, 43px)/1.15 var(--display); letter-spacing: -.05em; }
+    .value-section p { margin: 0; color: #aaa7b2; font-size: 14px; }
+    .value-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .value-item { padding: 19px; border: 1px solid rgba(255,255,255,.08); border-radius: 15px; background: rgba(255,255,255,.025); }
+    .value-icon { display: grid; width: 34px; height: 34px; margin-bottom: 12px; place-items: center; border: 1px solid rgba(230,189,119,.25); border-radius: 10px; color: var(--gold); background: rgba(230,189,119,.07); }
+    .value-item h3 { margin: 0 0 5px; font: 700 13px var(--display); }
+    .value-item p { color: #97949f; font-size: 11px; line-height: 1.6; }
+    .contact-section { display: grid; grid-template-columns: .92fr 1.08fr; gap: 65px; align-items: center; }
+    .contact-section h2 { margin: 13px 0; font: 700 clamp(32px, 4.5vw, 49px)/1.1 var(--display); letter-spacing: -.05em; }
+    .contact-section .intro { max-width: 430px; margin: 0; color: #aaa7b2; }
+    .contact-info { display: grid; gap: 14px; margin-top: 32px; }
+    .contact-line { display: flex; align-items: center; gap: 12px; color: #d7d4dc; font-size: 13px; }
+    .contact-line .value-icon { width: 37px; height: 37px; margin: 0; }
+    .contact-line small { display: block; color: #888691; font-size: 10px; }
+    .contact-card { padding: 28px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: linear-gradient(145deg, rgba(27,26,34,.86), rgba(15,15,21,.94)); box-shadow: 0 25px 55px rgba(0,0,0,.28); }
+    .contact-card h3 { margin: 0 0 7px; font: 700 20px var(--display); }
+    .contact-card p { margin: 0 0 21px; color: #a5a2ad; font-size: 12px; }
+    .contact-card .button { width: 100%; }
+    .contact-card .small-note { margin: 13px 0 0; text-align: center; color: #86838f; font-size: 10px; }
+    footer { border-top: 1px solid rgba(255,255,255,.08); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 83px; color: #8d8a95; font-size: 11px; }
+    .footer-brand { color: #e8e5eb; font: 700 11px var(--display); letter-spacing: .12em; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a:hover { color: var(--gold); }
+    .admin-trigger { border: 0; padding: 0; color: #77747e; background: transparent; font-size: 10px; cursor: pointer; }
+    .admin-trigger:hover { color: var(--gold); }
+    .modal-backdrop { position: fixed; z-index: 50; inset: 0; display: none; place-items: center; padding: 20px; background: rgba(0,0,0,.72); backdrop-filter: blur(9px); }
+    .modal-backdrop.open { display: grid; }
+    .admin-panel { width: min(560px, 100%); max-height: min(80vh, 760px); overflow: auto; padding: 24px; border: 1px solid rgba(255,255,255,.15); border-radius: 20px; background: #15141b; box-shadow: 0 30px 100px rgba(0,0,0,.65); }
+    .admin-head { display: flex; align-items: start; justify-content: space-between; gap: 15px; }
+    .admin-head h2 { margin: 0; font: 700 22px var(--display); }
+    .admin-head p { margin: 5px 0 17px; color: #9996a1; font-size: 11px; }
+    .admin-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-bottom: 17px; }
+    .admin-stat { padding: 11px; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; background: rgba(255,255,255,.025); }
+    .admin-stat strong { display: block; color: var(--gold); font: 700 14px var(--display); }
+    .admin-stat span { display: block; margin-top: 2px; color: #898691; font-size: 9px; }
+    .close-admin { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%; color: white; background: transparent; cursor: pointer; }
+    .admin-row { display: grid; grid-template-columns: 1fr 145px; align-items: center; gap: 15px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.08); font-size: 12px; }
+    .admin-row label { color: #dedbe3; }
+    .price-input { width: 100%; padding: 10px 11px; border: 1px solid rgba(255,255,255,.16); border-radius: 9px; outline: none; color: white; background: #0c0c11; }
+    .price-input:focus { border-color: var(--gold); }
+    .admin-actions { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 20px; }
+    .admin-message { color: #9fd9b2; font-size: 11px; }
+    .admin-disclaimer { margin: 17px 0 0; color: #898691; font-size: 10px; line-height: 1.6; }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    @keyframes breathe { from { transform: scale(.92); opacity: .65; } to { transform: scale(1.08); opacity: 1; } }
+    @media (max-width: 900px) {
+      .nav-links { gap: 17px; }
+      .hero { min-height: 570px; }
+      .hero-art { min-height: 380px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .value-section { gap: 32px; padding: 34px; }
+      .contact-section { gap: 35px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 34px, 520px); }
+      .nav { min-height: 67px; }
+      .brand { font-size: 11px; }
+      .brand-mark { width: 31px; border-radius: 9px; }
+      .nav-links { display: none; }
+      .nav > .button { min-height: 39px; padding-inline: 14px; font-size: 11px; }
+      .hero { min-height: 0; grid-template-columns: 1fr; gap: 10px; padding-block: 70px 38px; }
+      .hero h1 { font-size: clamp(47px, 12vw, 66px); }
+      .hero-copy { font-size: 14px; }
+      .hero-art { min-height: 355px; }
+      .hero-tile { width: min(245px, 67%); }
+      .tile-monogram { width: 104px; font-size: 36px; }
+      .tag-top { left: 0; }
+      .tag-bottom { right: -2px; }
+      .section { padding-block: 66px; }
+      .section-head { display: block; margin-bottom: 25px; }
+      .section-head p { margin-top: 12px; }
+      .service-grid { gap: 13px; }
+      .service-art { height: 160px; }
+      .service-art svg { height: 142px; }
+      .service-body { padding: 16px 14px; }
+      .service-body h3 { font-size: 15px; }
+      .service-body p { min-height: 65px; font-size: 11px; }
+      .service-footer { align-items: start; flex-direction: column; margin-top: 15px; }
+      .order-link { width: 100%; justify-content: center; }
+      .value-section { grid-template-columns: 1fr; padding: 25px; }
+      .value-list { gap: 10px; }
+      .value-item { padding: 14px; }
+      .contact-section { grid-template-columns: 1fr; gap: 30px; }
+      .contact-card { padding: 22px; }
+      .footer-inner { min-height: 100px; flex-wrap: wrap; padding-block: 20px; }
+      .footer-links { order: 3; width: 100%; }
+    }
+    @media (max-width: 390px) {
+      .service-grid { grid-template-columns: 1fr; }
+      .service-art { height: 205px; }
+      .service-body p { min-height: 0; }
+      .service-footer { align-items: center; flex-direction: row; }
+      .order-link { width: auto; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav wrap">
+      <a class="brand" href="#home" aria-label="Rayen Masmoudi Digital home">
+        <span class="brand-mark">RM</span><span class="brand-name">RAYEN MASMOUDI<span>DIGITAL STUDIO</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#studio">Studio</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="button button-primary button-small" href="#services">Let’s talk <span class="arrow">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-copy-block reveal">
+        <span class="eyebrow">Independent digital studio · Sfax, Tunisia</span>
+        <h1>Make your next<br>move <span class="gradient">unforgettable.</span></h1>
+        <p class="hero-copy">Ideas with ambition deserve a digital presence to match. We bring strategy, design and technology together to move your brand forward.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#services">Explore our services <span class="arrow">↗</span></a>
+          <a class="button" href="#contact">Start a project <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-note"><span class="online-dot"></span> Thoughtful creative. Measurable impact.</div>
+      </div>
+      <div class="hero-art reveal" aria-label="Rayen Masmoudi Digital 3D studio emblem">
+        <div class="orbit"></div><span class="orb orb-one"></span><span class="orb orb-two"></span>
+        <div class="floating-tag tag-top"><b>01</b> &nbsp; Strategy first</div>
+        <div class="floating-tag tag-bottom">Built for <b>what’s next</b> &nbsp;✦</div>
+        <div class="hero-tile">
+          <div class="tile-glow"></div>
+          <div class="tile-content"><div class="tile-monogram">RM</div><strong>RAYEN MASMOUDI</strong><small>DIGITAL · SFAX · 2026</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="services">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">What we do</span><h2>One vision. <span>Six ways forward.</span></h2></div>
+        <p>From the first spark to the final pixel, get the expertise to make your next digital move count.</p>
+      </div>
+      <div class="service-grid" id="services-container" aria-live="polite"></div>
+    </section>
+
+    <section class="section wrap" id="studio">
+      <div class="value-section reveal">
+        <div>
+          <span class="eyebrow">The studio difference</span>
+          <h2>More than digital.<br><span style="color:var(--gold)">A partner in progress.</span></h2>
+          <p>Every project starts with listening. Then we pair clear thinking with considered craft to make work that feels right, works hard and lasts.</p>
+        </div>
+        <div class="value-list">
+          <article class="value-item"><span class="value-icon">✦</span><h3>Made for you</h3><p>No templates. Just work shaped around your goals and your people.</p></article>
+          <article class="value-item"><span class="value-icon">↗</span><h3>Built to perform</h3><p>Beautiful by design, focused on outcomes that move your business.</p></article>
+          <article class="value-item"><span class="value-icon">◈</span><h3>Detail, always</h3><p>Careful craft across every interaction, screen and story.</p></article>
+          <article class="value-item"><span class="value-icon">◎</span><h3>Close collaboration</h3><p>Direct communication and a committed partner at every step.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="contact">
+      <div class="contact-section">
+        <div class="reveal">
+          <span class="eyebrow">Your next chapter starts here</span>
+          <h2>Let’s make<br><span style="color:var(--gold)">something matter.</span></h2>
+          <p class="intro">Have a project in mind, or just want to explore what’s possible? We’d love to hear from you.</p>
+          <div class="contact-info">
+            <a class="contact-line" href="tel:+21644203500"><span class="value-icon">☎</span><span><small>Call or WhatsApp</small>+216 44 203 500</span></a>
+            <div class="contact-line"><span class="value-icon">⌖</span><span><small>Based in</small>Sfax, Tunisia</span></div>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Tell us what you’re dreaming up.</h3>
+          <p>Get in touch directly on WhatsApp. We’ll take it from there.</p>
+          <a class="button button-primary" href="https://wa.me/21644203500?text=Hello%20Rayen%20Masmoudi%20Digital%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp <span class="arrow">↗</span></a>
+          <p class="small-note">Typically replies within one business day.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner wrap">
+      <span class="footer-brand">RAYEN MASMOUDI DIGITAL</span>
+      <span>© <span id="year"></span> · Made with intention in Sfax, Tunisia</span>
+      <div class="footer-links"><a href="#services">Services</a><a href="#contact">Contact</a><button type="button" class="admin-trigger" id="open-admin">Admin</button></div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+    <section class="admin-panel">
+      <div class="admin-head">
+        <div><h2 id="admin-title">Admin dashboard</h2><p>Manage your service pricing.</p></div>
+        <button class="close-admin" type="button" id="close-admin" aria-label="Close admin panel">×</button>
+      </div>
+      <div class="admin-stats" aria-label="Dashboard overview">
+        <div class="admin-stat"><strong>06</strong><span>Active services</span></div>
+        <div class="admin-stat"><strong>TND</strong><span>Display currency</span></div>
+        <div class="admin-stat"><strong>Local</strong><span>Price storage</span></div>
+      </div>
+      <div id="admin-rows"></div>
+      <div class="admin-actions"><span class="admin-message" id="admin-message" aria-live="polite"></span><button class="button button-primary button-small" type="button" id="save-prices">Save prices</button></div>
+      <p class="admin-disclaimer">Prices are saved only in this browser using local storage. This demo panel has no sign-in or shared database; changes are not published to other devices or visitors.</p>
+    </section>
+  </div>
+
+  <script>
+    const defaultServices = [
+      { id: "marketing", name: "Digital Marketing & Sponsoring", category: "Strategy · Reach · Results", description: "Build a smarter presence and reach the right audience with strategic campaigns and sponsored content.", price: 450, accent: "#e6bd77", tint: "rgba(224,175,89,.2)", art: "marketing" },
+      { id: "video", name: "Professional Video Editing", category: "Motion · Storytelling", description: "Turn raw footage into polished, attention-grabbing video stories ready for every platform.", price: 250, accent: "#a584ff", tint: "rgba(151,111,255,.22)", art: "video" },
+      { id: "mobile", name: "Mobile Application Development", category: "iOS · Android · Product", description: "Make your idea real with a thoughtful, high-performance mobile experience designed around users.", price: 2500, accent: "#70b9ff", tint: "rgba(91,169,255,.21)", art: "mobile" },
+      { id: "website", name: "Website Development", category: "Web · Commerce · Experience", description: "Create a distinctive, responsive website that turns first impressions into lasting connections.", price: 1200, accent: "#70b9ff", tint: "rgba(75,163,222,.2)", art: "website" },
+      { id: "logo", name: "Logo Design", category: "Identity · Brand system", description: "Give your brand a memorable signature with a considered logo and a visual identity built to grow.", price: 180, accent: "#e6bd77", tint: "rgba(219,169,88,.2)", art: "logo" },
+      { id: "poster", name: "Advertising Poster Design", category: "Campaign · Print · Digital", description: "Make your message impossible to miss with bold, beautifully composed campaign visuals.", price: 100, accent: "#a584ff", tint: "rgba(151,111,255,.2)", art: "poster" }
+    ];
+    const art = {
+      marketing: `<svg viewBox="0 0 280 185" role="img" aria-label="3D campaign megaphone with analytics chart"><defs><linearGradient id="m1" x2="1" y2="1"><stop stop-color="#f6db9c"/><stop offset="1" stop-color="#b7792d"/></linearGradient><linearGradient id="m2" x2="0" y2="1"><stop stop-color="#9f7aff"/><stop offset="1" stop-color="#573db0"/></linearGradient><linearGradient id="m3" x2="1"><stop stop-color="#e8c27d"/><stop offset="1" stop-color="#90652e"/></linearGradient></defs><ellipse cx="145" cy="158" rx="91" ry="12" fill="#06060b" opacity=".7"/><path d="M40 118V70l101-30v106z" fill="url(#m1)" stroke="#ffedc5" stroke-opacity=".5"/><path d="M141 40l66 21v64l-66 21z" fill="url(#m3)"/><path d="M39 71l18-6v58l-18-5z" fill="#fff0ca"/><path d="M69 114l22 4 14 42H80z" fill="url(#m2)"/><path d="M198 70l27-9v64l-27-9z" fill="#b68b4b"/><path d="M225 64q32 26 0 58" fill="none" stroke="#f4d18e" stroke-width="4" opacity=".8"/><rect x="162" y="13" width="47" height="27" rx="5" fill="#201c2b" stroke="#a584ff"/><path d="M169 32l9-10 8 6 13-11" fill="none" stroke="#a584ff" stroke-width="2"/><circle cx="199" cy="17" r="3" fill="#e6bd77"/><path d="M43 58l-7-10m36 0-4-13m30 7 3-13" stroke="#f2d394" stroke-width="3" stroke-linecap="round"/><circle cx="238" cy="34" r="4" fill="#70b9ff"/><circle cx="54" cy="32" r="3" fill="#a584ff"/></svg>`,
+      video: `<svg viewBox="0 0 280 185" role="img" aria-label="3D cinema camera and floating film frames"><defs><linearGradient id="v1" x2="1" y2="1"><stop stop-color="#b49aff"/><stop offset="1" stop-color="#593bb7"/></linearGradient><linearGradient id="v2" x2="0" y2="1"><stop stop-color="#e8e2f6"/><stop offset="1" stop-color="#7e6f9e"/></linearGradient></defs><ellipse cx="140" cy="157" rx="83" ry="11" fill="#06060b" opacity=".7"/><path d="M90 73h107v60H90z" fill="url(#v1)" stroke="#d1bcff" stroke-opacity=".6"/><path d="M90 133h107l-16 17H78z" fill="#38266e"/><circle cx="196" cy="102" r="34" fill="#302348" stroke="#c5aaff" stroke-width="5"/><circle cx="196" cy="102" r="20" fill="#10111d" stroke="#8466d4" stroke-width="3"/><circle cx="196" cy="102" r="8" fill="#70b9ff" opacity=".75"/><path d="M105 73l11-30q2-6 10-6h17q7 0 9 7l9 29" fill="url(#v2)" stroke="#e8ddff" stroke-opacity=".6"/><circle cx="124" cy="53" r="14" fill="#31264c" stroke="#d1bcff" stroke-width="4"/><circle cx="171" cy="51" r="12" fill="#31264c" stroke="#ad8bff" stroke-width="4"/><path d="M119 133l-4 22m53-22 8 22" stroke="#a98bf1" stroke-width="7" stroke-linecap="round"/><path d="M48 51l24-12 8 20-23 13z" fill="#f3d9a1" opacity=".9"/><rect x="36" y="90" width="38" height="25" rx="4" fill="#24202d" stroke="#a584ff"/><path d="M43 109l9-10 7 5 7-8" fill="none" stroke="#e6bd77" stroke-width="2"/><path d="M229 47l8 7-8 7-8-7zM236 132l7-7 7 7-7 7z" fill="#a584ff"/><path d="M76 134h18m109 0h19" stroke="#70b9ff" stroke-width="2" opacity=".8"/></svg>`,
+      mobile: `<svg viewBox="0 0 280 185" role="img" aria-label="3D smartphone displaying a colorful app interface"><defs><linearGradient id="p1" x2="1" y2="1"><stop stop-color="#70c8ff"/><stop offset=".55" stop-color="#7167e9"/><stop offset="1" stop-color="#a584ff"/></linearGradient><linearGradient id="p2" x2="0" y2="1"><stop stop-color="#393644"/><stop offset="1" stop-color="#111119"/></linearGradient></defs><ellipse cx="143" cy="159" rx="73" ry="11" fill="#06060b" opacity=".7"/><g transform="rotate(-13 141 91)"><rect x="99" y="17" width="82" height="142" rx="16" fill="#d9e8ff" opacity=".16"/><rect x="94" y="13" width="82" height="142" rx="16" fill="url(#p2)" stroke="#a8d7ff" stroke-width="2"/><rect x="100" y="24" width="70" height="120" rx="10" fill="#181824"/><rect x="126" y="18" width="20" height="3" rx="2" fill="#7f8795"/><circle cx="135" cy="54" r="21" fill="url(#p1)"/><path d="M123 57l10-13 13 14-9 10z" fill="#f2d69a"/><rect x="109" y="83" width="52" height="8" rx="4" fill="#ddd7f2"/><rect x="109" y="96" width="37" height="5" rx="2.5" fill="#747282"/><rect x="108" y="111" width="25" height="22" rx="5" fill="#7864d0"/><rect x="137" y="111" width="25" height="22" rx="5" fill="#377fb2"/><circle cx="120" cy="122" r="5" fill="#e6bd77"/><path d="M149 118h9m-9 5h8" stroke="#bce3ff" stroke-width="2" stroke-linecap="round"/></g><circle cx="61" cy="54" r="4" fill="#a584ff"/><circle cx="212" cy="68" r="5" fill="#e6bd77"/><circle cx="207" cy="127" r="3" fill="#70b9ff"/><path d="M61 114l8-8 8 8-8 8z" fill="#70b9ff" opacity=".75"/><path d="M212 34l5-8 5 8-5 8z" fill="#a584ff"/></svg>`,
+      website: `<svg viewBox="0 0 280 185" role="img" aria-label="3D desktop browser window with a modern website layout"><defs><linearGradient id="w1" x2="1" y2="1"><stop stop-color="#82d0ff"/><stop offset="1" stop-color="#6050bd"/></linearGradient><linearGradient id="w2" x2="0" y2="1"><stop stop-color="#f2d69c"/><stop offset="1" stop-color="#ba813d"/></linearGradient></defs><ellipse cx="142" cy="155" rx="98" ry="11" fill="#06060b" opacity=".7"/><path d="M58 42q0-9 9-9h151q9 0 9 9v88H58z" fill="#302c3b" stroke="#c0b3e1" stroke-width="1.5"/><path d="M59 49h167v76H59z" fill="#14141c"/><path d="M59 42q0-8 8-8h151q8 0 8 8v9H59z" fill="#50495e"/><circle cx="69" cy="43" r="2.5" fill="#f0a18b"/><circle cx="78" cy="43" r="2.5" fill="#e6bd77"/><circle cx="87" cy="43" r="2.5" fill="#91d3a9"/><rect x="101" y="40" width="75" height="5" rx="2.5" fill="#272531"/><rect x="72" y="61" width="52" height="5" rx="2.5" fill="#e6bd77"/><rect x="72" y="72" width="69" height="11" rx="3" fill="#f0eff5"/><rect x="72" y="89" width="56" height="4" rx="2" fill="#858392"/><rect x="72" y="96" width="47" height="4" rx="2" fill="#656371"/><rect x="72" y="108" width="30" height="10" rx="5" fill="url(#w2)"/><rect x="153" y="61" width="58" height="57" rx="9" fill="url(#w1)"/><circle cx="182" cy="83" r="15" fill="#ffdfaa" opacity=".9"/><path d="M157 109q14-21 25-2 12-22 26-2v13h-51z" fill="#31275f"/><path d="M139 130l-6 17h57l-7-17" fill="#514969"/><path d="M123 149h78l-8 6h-62z" fill="#9d8caf"/><circle cx="236" cy="64" r="4" fill="#70b9ff"/><path d="M43 76l5-8 5 8-5 8z" fill="#a584ff"/><circle cx="231" cy="111" r="3" fill="#e6bd77"/></svg>`,
+      logo: `<svg viewBox="0 0 280 185" role="img" aria-label="3D gold monogram identity sculpture"><defs><linearGradient id="l1" x2=".8" y2="1"><stop stop-color="#fff0c1"/><stop offset=".35" stop-color="#e6bd77"/><stop offset="1" stop-color="#99672c"/></linearGradient><linearGradient id="l2" x2="1" y2="1"><stop stop-color="#a584ff"/><stop offset="1" stop-color="#493681"/></linearGradient></defs><ellipse cx="140" cy="151" rx="70" ry="12" fill="#06060b" opacity=".7"/><ellipse cx="140" cy="145" rx="63" ry="14" fill="#322843" stroke="#a584ff" stroke-opacity=".55"/><ellipse cx="140" cy="139" rx="58" ry="12" fill="url(#l2)" opacity=".8"/><path d="M103 117V65h13v40h27v12z" fill="#875d2d"/><path d="M97 111V60h13v39h27v12z" fill="url(#l1)" stroke="#fff0c1" stroke-opacity=".45"/><path d="M146 111V60h13v18h13q20 0 20 17t-20 16zm13-12h13q7 0 7-5t-7-5h-13z" fill="#96662f"/><path d="M140 105V54h13v18h13q20 0 20 17t-20 16zm13-12h13q7 0 7-5t-7-5h-13z" fill="url(#l1)" stroke="#fff0c1" stroke-opacity=".45"/><circle cx="83" cy="70" r="3" fill="#70b9ff"/><circle cx="208" cy="84" r="4" fill="#e6bd77"/><path d="M204 48l5-8 5 8-5 8zM73 109l5-6 5 6-5 6z" fill="#a584ff"/><path d="M100 130h80" stroke="#f2d79c" stroke-opacity=".58"/><circle cx="111" cy="140" r="2" fill="#fff0c1"/><circle cx="171" cy="141" r="2" fill="#fff0c1"/></svg>`,
+      poster: `<svg viewBox="0 0 280 185" role="img" aria-label="3D creative advertising poster with bold campaign graphics"><defs><linearGradient id="a1" x2="1" y2="1"><stop stop-color="#b294ff"/><stop offset="1" stop-color="#5738a7"/></linearGradient><linearGradient id="a2" x2="0" y2="1"><stop stop-color="#f4db9d"/><stop offset="1" stop-color="#c5863d"/></linearGradient></defs><ellipse cx="143" cy="157" rx="82" ry="10" fill="#06060b" opacity=".7"/><g transform="rotate(8 142 90)"><path d="M88 25h110l12 123H100z" fill="#4a3678"/><path d="M81 20h111l11 123H92z" fill="url(#a1)" stroke="#c9b8ff" stroke-opacity=".7"/><path d="M97 40h77" stroke="#e5d8ff" stroke-width="2" opacity=".8"/><text x="99" y="67" fill="#fff" font-size="12" font-family="Arial" font-weight="700" letter-spacing="2">MAKE IT</text><text x="99" y="83" fill="#fff" font-size="15" font-family="Arial" font-weight="800" letter-spacing="1">MATTER.</text><circle cx="145" cy="108" r="21" fill="url(#a2)"/><path d="M128 113l18-27 21 29-19 9z" fill="#f9edce" opacity=".78"/><path d="M98 127h37" stroke="#fff" stroke-width="2"/><path d="M98 133h24" stroke="#ddd0ff" stroke-width="1.5"/></g><path d="M71 53l6-9 6 9-6 9z" fill="#e6bd77"/><circle cx="213" cy="55" r="4" fill="#70b9ff"/><circle cx="67" cy="126" r="3" fill="#a584ff"/><path d="M214 122l6-6 6 6-6 6z" fill="#e6bd77"/></svg>`
+    };
+    const storageKey = "rmd-service-prices-v1";
+    let services = defaultServices.map(service => ({ ...service }));
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+      services = services.map(service => ({ ...service, price: Number.isFinite(saved[service.id]) && saved[service.id] >= 0 ? saved[service.id] : service.price }));
+    } catch (error) {
+      console.warn("Saved service prices could not be read; using the default prices.", error);
+    }
+    const formatPrice = amount => new Intl.NumberFormat("en-TN", { maximumFractionDigits: 0 }).format(amount);
+    const serviceContainer = document.getElementById("services-container");
+    function renderServices() {
+      serviceContainer.innerHTML = services.map(service => {
+        const message = encodeURIComponent(`Hello Rayen Masmoudi Digital, I'm interested in ${service.name}. Please share more details.`);
+        return `<article class="service-card" style="--accent:${service.accent};--tint:${service.tint}">
+          <div class="service-art">${art[service.art]}</div>
+          <div class="service-body"><span class="service-kicker">${service.category}</span><h3>${service.name}</h3><p>${service.description}</p>
+            <div class="service-footer"><div><span class="price-label">Starting from</span><span class="price">${formatPrice(service.price)} <small>TND</small></span></div>
+              <a class="order-link" href="https://wa.me/21644203500?text=${message}" target="_blank" rel="noopener noreferrer" aria-label="Order ${service.name} on WhatsApp">Order now <span class="arrow">↗</span></a>
+            </div>
+          </div></article>`;
+      }).join("");
+      serviceContainer.querySelectorAll(".service-card").forEach(card => {
+        card.addEventListener("pointermove", event => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+          card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+        });
+      });
+    }
+    function renderAdminRows() {
+      document.getElementById("admin-rows").innerHTML = services.map(service =>
+        `<div class="admin-row"><label for="price-${service.id}">${service.name}</label><input class="price-input" id="price-${service.id}" type="number" min="0" step="1" value="${service.price}" inputmode="numeric" aria-label="${service.name} price in TND"></div>`
+      ).join("");
+    }
+    const modal = document.getElementById("admin-modal");
+    const closeAdmin = () => { modal.classList.remove("open"); document.getElementById("open-admin").focus(); };
+    document.getElementById("open-admin").addEventListener("click", () => { renderAdminRows(); modal.classList.add("open"); document.getElementById("price-marketing").focus(); });
+    document.getElementById("close-admin").addEventListener("click", closeAdmin);
+    modal.addEventListener("click", event => { if (event.target === modal) closeAdmin(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("open")) closeAdmin(); });
+    document.getElementById("save-prices").addEventListener("click", () => {
+      const updated = [];
+      for (const service of services) {
+        const input = document.getElementById(`price-${service.id}`);
+        const value = Number(input.value);
+        if (input.value.trim() === "" || !Number.isFinite(value) || value < 0) {
+          input.setAttribute("aria-invalid", "true");
+          input.focus();
+          document.getElementById("admin-message").textContent = `Enter a valid non-negative price for ${service.name}.`;
+          return;
+        }
+        input.removeAttribute("aria-invalid");
+        updated.push({ ...service, price: value });
+      }
+      const prices = Object.fromEntries(updated.map(service => [service.id, service.price]));
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(prices));
+      } catch (error) {
+        document.getElementById("admin-message").textContent = "Could not save. Check browser storage settings.";
+        console.error("Service prices could not be saved to local storage.", error);
+        return;
+      }
+      services = updated;
+      renderServices();
+      document.getElementById("admin-message").textContent = "Prices saved in this browser.";
+    });
+    renderServices();
+    document.getElementById("year").textContent = new Date().getFullYear();
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+      }), { threshold: .12 });
+      document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+    } else {
+      document.querySelectorAll(".reveal").forEach(element => element.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
